@@ -13,10 +13,16 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
-import { DishService } from './Services/dish.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+
+import { DishService } from './Services/dish.service';
+import { PromotionService } from './services/promotion.service';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,12 +31,16 @@ import { FooterComponent } from './footer/footer.component';
     DishdetailComponent,
     HeaderComponent,
     FooterComponent,
+    AboutComponent,
+    HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
+    AppRoutingModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
@@ -38,6 +48,7 @@ import { FooterComponent } from './footer/footer.component';
   ],
   providers: [
     DishService,
+    PromotionService,
   ],
   bootstrap: [AppComponent]
 })
