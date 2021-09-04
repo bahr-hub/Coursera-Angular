@@ -9,7 +9,7 @@
             <h3>{{dish.name | uppercase}}</h3>
           </mat-card-title>
         </mat-card-header>
-          <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+        <img mat-card-image src={{dish.image}} alt={{dish.name}}>
         <mat-card-content>
           <p>{{dish.description}}</p>
         </mat-card-content>
@@ -22,7 +22,22 @@
   </div>
 
   <div fxFlex="40">
-    <p>Display the list of comments here</p>
+    <div *ngIf="dish">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Comments</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let comment of dish.comments">
+            <p>{{comment.comment}}</p>
+            <p>{{comment.rating}} Stars</p>
+            <p> {{comment.author}} {{comment.date | date}} </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
 </div>
