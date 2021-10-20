@@ -1,7 +1,7 @@
 <div class="container" fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -27,7 +27,7 @@
     </mat-card>
   </div>
   <div fxFlex="40" fxLayout="column">
-    <div *ngIf="dish">
+    <div *ngIf="dish" [@visibility]="visibility">
       <mat-list>
         <h3>Comments</h3>
         <mat-list-item *ngFor="let comment of dish.comments">
@@ -65,7 +65,8 @@
     <div fxFlex fxFlexOffset="20px" class="full-width">
       <p>{{ commentForm.value | json }}
          {{ commentForm.status | json }}</p>
-      <form novalidate [formGroup]="commentForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+      <form novalidate [formGroup]="commentForm" 
+      #fform="ngForm" (ngSubmit)="onSubmit()">
         <p>
           <mat-form-field class="half-width">
             <input matInput formControlName="author" placeholder="Name" type="text" required>
