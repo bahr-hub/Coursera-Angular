@@ -105,12 +105,12 @@
       <table class="form-size">
         <td>
           <mat-slide-toggle formControlName="agree"  
-          [(ngModel)]="agree">
+          >
             May we contact you?</mat-slide-toggle>
         </td>
         <td>
           <mat-select placeholder="How?"
-          formControlName="contacttype"  [disabled]="!agree">
+          formControlName="contacttype"  >
             <mat-option *ngFor="let ctype of
             contactType" [value]="ctype">
               {{ ctype }}
