@@ -81,7 +81,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 
     MatProgressSpinnerModule,
 
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [
     DishService,
@@ -89,6 +89,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     LeaderService,
     ProcessHTTPMsgService,
     {provide: 'BaseURL', useValue: baseURL},
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
 
